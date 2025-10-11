@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body { font-family: sans-serif; background-color: #A9D5EF; }
+        .container { max-width: 600px; margin: auto; }
+        .form-row { margin-bottom: 10px; }
+        /* Căn chỉnh các nhãn và ô nhập liệu cho gọn gàng */
+        .form-row label {
+            display: inline-block;
+            width: 90px;
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="text-align: center;">
+        <img src="logo.png" alt="Jackson Electronics Logo" style="margin-bottom: 10px;">
+        
+        <h2>Registration Form</h2>
+        <p>Register your Jackson Electronics product here</p>
+    </div>
+
+    <form action="#" method="post">
+        <fieldset>
+            <div class="form-row">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name">
+            </div>
+            <div class="form-row">
+                <label for="address1">Address #1:</label>
+                <input type="text" id="address1" name="address1" size="50">
+            </div>
+            <div class="form-row">
+                <label for="address2">Address #2:</label>
+                <input type="text" id="address2" name="address2" size="50">
+            </div>
+            <div class="form-row">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" size="5">
+                <label for="zip">Zip:</label>
+                <input type="text" id="zip" name="zip" size="10">
+            </div>
+            <div class="form-row">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" value="United States">
+            </div>
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+            <div class="form-row">
+                <label for="product">Product:</label>
+                <select id="product" name="product">
+                    <option value="scanmaster">ScanMaster</option>
+                    <option value="printpro">PrintPro</option>
+                    <option value="copymate">CopyMate</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="date-purchased">Date Purchased:</label>
+                <input type="date" id="date-purchased" name="date-purchased">
+            </div>
+            <div class="form-row">
+                <label for="serial">Serial #:</label>
+                <input type="text" id="serial" name="serial">
+            </div>
+            <div class="form-row">
+                <label style="vertical-align: top;">Used for:</label>
+                <div style="display: inline-block;">
+                    <input type="radio" id="home" name="used_for" value="home">
+                    <label for="home" style="width: auto; text-align: left;">Home</label>
+                    <input type="radio" id="business" name="used_for" value="business">
+                    <label for="business" style="width: auto; text-align: left;">Business</label>
+                    <input type="radio" id="government" name="used_for" value="government">
+                    <label for="government" style="width: auto; text-align: left;">Government</label>
+                    <br>
+                    <input type="radio" id="education" name="used_for" value="education" style="margin-left: 105px;">
+                    <label for="education" style="width: auto; text-align: left;">Educational Institution</label>
+                    <input type="radio" id="other_use" name="used_for" value="other">
+                    <label for="other_use" style="width: auto; text-align: left;">Other</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <label style="vertical-align: top;">System <br>(check all that apply):</label>
+                 <div style="display: inline-block;">
+                    <input type="checkbox" id="windows" name="system[]" value="windows">
+                    <label for="windows" style="width: auto; text-align: left;">Windows</label>
+                    <input type="checkbox" id="macintosh" name="system[]" value="macintosh">
+                    <label for="macintosh" style="width: auto; text-align: left;">Macintosh</label>
+                    <br>
+                    <input type="checkbox" id="unix" name="system[]" value="unix" style="margin-left: 105px;">
+                    <label for="unix" style="width: auto; text-align: left;">UNIX</label>
+                    <input type="checkbox" id="other_system" name="system[]" value="other">
+                    <label for="other_system" style="width: auto; text-align: left;">Other</label>
+                </div>
+            </div>
+        </fieldset>
+        
+        <hr>
+
+        <fieldset>
+            <div class="form-row">
+                <label for="comments" style="vertical-align: top;">Comments?:</label>
+                <textarea id="comments" name="comments" rows="5" cols="45"></textarea>
+            </div>
+        </fieldset>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <input type="submit" value="Click to register">
+            <input type="reset" value="Click to cancel">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

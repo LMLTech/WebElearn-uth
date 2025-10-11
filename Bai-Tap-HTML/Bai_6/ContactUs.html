@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <style>
+        body { font-family: serif; }
+        .container { border: 1px solid #ccc; padding: 20px; max-width: 500px; }
+        fieldset { border: 1px solid #999; padding: 15px; margin-bottom: 20px; }
+        legend { font-weight: bold; }
+        .form-row { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Contact Us</h1>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Your message:</legend>
+            <div class="form-row">
+                <label for="to">To</label>
+                <input type="text" id="to" name="to" value="Example Cafe" readonly>
+            </div>
+            <div class="form-row">
+                <label for="email">Your email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+                <label for="message">Message</label><br>
+                <textarea id="message" name="message" rows="8" cols="50" required></textarea>
+            </div>
+            <div class="form-row">
+                <label for="attachment">Attach File</label>
+                <input type="file" id="attachment" name="attachment">
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>How you found us:</legend>
+            <div class="form-row">
+                <label for="found-us">How did you hear of us</label>
+                <select id="found-us" name="found-us">
+                    <option value="google" selected>Google</option>
+                    <option value="friend">From a friend</option>
+                    <option value="social_media">Social Media</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="newsletter">Newsletter</label>
+                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                <label for="newsletter">Ensure this box is checked if you would like to receive email updates</label>
+            </div>
+        </fieldset>
+        
+        <input type="submit" value="Send message">
+    </form>
+</div>
+
+</body>
+</html>
