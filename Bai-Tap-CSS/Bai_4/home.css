@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #f0f0f0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+.container {
+    width: 900px; 
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    flex-direction: column; 
+}
+
+header {
+    background-color: #fff; 
+    padding: 20px 20px; 
+    border-bottom: 2px solid orange; 
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: flex-start; 
+    height: 60px; 
+}
+
+
+
+.main-content {
+    display: flex; 
+    flex-grow: 1; 
+}
+
+.sidebar {
+    width: 200x; 
+    background: url(sidebar.jpg);
+    
+    border-right: 1px solid #ccc; 
+   
+}
+
+.sidebar ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.sidebar ul li {
+    margin-bottom: 2px; 
+    margin-bottom: 0; 
+    border-bottom: 1px dotted #a09070; 
+}
+
+.sidebar ul li a {
+    display: block; 
+    padding: 8px 20px; 
+    text-decoration: none; 
+    color: #333; 
+    white-space: nowrap;
+
+}
+
+
+
+.content-area {
+    flex-grow: 1; 
+    padding: 20px 30px; 
+    line-height: 1.6; 
+}
+
+.content-area h2 {
+    color: orange; 
+    font-size: 1.6em; 
+    margin-top: 0; 
+    margin-bottom: 15px; 
+}
+
+
+.content-area p {
+    margin-bottom: 15px; 
+    font-size: 0.95em; 
+    color: #cf55cf
+}
+
+
+.basic-materials-box {
+    float: right; 
+    width: 250px; 
+    height: auto;
+    background-color: #efede9; 
+    border: 5px solid #ffa600;
+    padding: 15px; 
+    margin-left: 20px; 
+    margin-bottom: 15px; 
+    
+}
+
+.basic-materials-box h3 {
+    color: #cc6600; 
+    font-size: 1.2em; 
+    margin-top: 0; 
+    margin-bottom: 10px; 
+    padding-bottom: 5px; 
+}
+
+.basic-materials-box ul li {
+    font-size: 0.85em; 
+    color: #bf8c2d; 
+    margin-bottom: 5px; 
+}
+
+
+footer {
+    
+    padding: 10px 20px; 
+    text-align: center; 
+    border-top: 2px solid orange; 
+    font-size: 14px;
+}

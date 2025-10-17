@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Cafe Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>EXAMPLE CAFE MENU</h1>
+
+        <nav class="main-nav">
+            <a href="#" class="home-icon"><img src="home.png" alt="Home Icon"></a>
+            <ul>
+                <li><a href="#starter">STARTER</a></li>
+                <li><a href="#">MAIN COURSES</a></li>
+                <li><a href="#desserts">DESSERTS</a></li>
+            </ul>
+            <form class="search-form">
+                <input type="text" placeholder="">
+                <input type="submit" value="Go">
+            </form>
+        </nav>
+
+        <main class="main-content">
+
+            <aside class="left-sidebar">
+                <div class="side-menu">
+                    <a href="#">Cafe Latte</a>
+                    <a href="#">Capuchino</a>
+                    <a href="#">Ocean Blue</a>
+                    <a href="#">Ice-cream Cafe</a>
+                    <a href="#">Order Online</a>
+                </div>
+                <div class="side-image">
+                    <img src="anh1.png" alt="Audience">
+                </div>
+            </aside>
+
+            <section class="center-column">
+                <div id="starter">
+                    <h2>Starter</h2>
+                    <ul>
+                        <li>Chesnut and Mushroom Goujons <span class="symbol-orange">(y)</span></li>
+                        <li>Goat Cheese<span class="symbol-orange">(y)</span></li>
+                        <li class="special-item">HONEY SOY CHICKEN KEBABS<span class="symbol-orange">(Y)</span></li>
+                        <li>Seafood Salad<span class="symbol-orange">(y)</span></li>
+                    </ul>
+                    <a class="back-link" href="#">Back to Top</a>
+                </div>
+
+                <div id="desserts">
+                    <h2>Desserts</h2>
+                    <ul>
+                        <li>Lemon Sorbet <span class="symbol-light-orange">(v)</span></li>
+                        <li>Chocolate Mud Pie<span class="symbol-orange">(y)</span></li>
+                        <li>Pecan Pie<span class="symbol-orange">(y)</span></li>
+                        <li>Selection of fine Cheeses from Around the World<span class="symbol-orange">(y)</span></li>
+                    </ul>
+                    <a class="back-link" href="#">Back to Top</a>
+                </div>
+
+                <div id="information">
+                    <h2>Information</h2>
+                    <form class="info-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="First Name">
+                            <input type="text" placeholder="Last Name">
+                        </div>
+                        <div class="form-row">
+                            <input type="email" placeholder="Email">
+                            <input type="tel" placeholder="Telephone">
+                        </div>
+                        <div class="form-row">
+                            <select>
+                                <option>USA</option>
+                                <option>Vietnam</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="radio-group">
+                                <input type="radio" id="vietnamese" name="nationality" checked> <label for="vietnamese">Vietnamese</label>
+                                <input type="radio" id="foreigner" name="nationality"> <label for="foreigner">Foreigner</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <textarea placeholder="Comment"></textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit">Submit</button>
+                            <button type="reset">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <aside class="right-sidebar">
+                <div class="events-box">
+                    <h3>Events</h3>
+                    <div class="event-item">
+                        <h4>Regular Meetings</h4>
+                        <img src="anh3.png" alt="Meeting">
+                        <p>Host your regular team meetings or activities in the comfort of your own private room. <a href="#">Read more...</a></p>
+                    </div>
+                    <div class="event-item">
+                        <h4>Product Launches</h4>
+                        <img src="anh2.png" alt="Product Launch">
+                        <p>Launch your product with ease in a space that truly fits its image. <a href="#">Read more...</a></p>
+                    </div>
+                </div>
+            </aside>
+
+        </main>
+
+        <footer>
+            ABC Company © - 12345678 - abccoffee@gmail.com
+        </footer>
+    </div>
+
+</body>
+</html>

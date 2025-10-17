@@ -1,0 +1,153 @@
+/* Tổng thể trang */
+body {
+    font-family: 'Times New Roman', Times, serif; 
+    background-color: #fff;
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+/* Tiêu đề chính */
+h1 {
+    text-align: center;
+    color: #d92a1c;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px; /* Thêm khoảng cách dưới tiêu đề */
+}
+
+
+/* ==================================================== */
+/* == BẮT ĐẦU PHẦN CSS MỚI CHO THANH ĐIỀU HƯỚNG      == */
+/* ==================================================== */
+.main-nav {
+    background-color: #d99694; /* Màu nền hồng đất */
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 30px; /* Khoảng cách với nội dung bên dưới */
+}
+
+.main-nav .home-icon img {
+    height: 30px;
+    display: block;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 15px;
+    display: flex;
+}
+
+.main-nav ul li {
+    border-left: 2px solid #6c306c; /* Vạch kẻ tím */
+    border-right: 2px solid #6c306c;
+    margin-right: -2px; 
+}
+
+.main-nav ul a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    display: block;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); /* Bóng đổ cho chữ */
+}
+
+.main-nav .search-form {
+    margin-left: auto; /* Đẩy form về bên phải */
+    display: flex;
+}
+
+.main-nav .search-form input[type="text"] {
+    border: 1px solid #aaa;
+    padding: 5px;
+    outline: none;
+}
+
+.main-nav .search-form input[type="submit"] {
+    border: 1px solid #aaa;
+    background-color: #e0e0e0;
+    padding: 5px 12px;
+    cursor: pointer;
+    margin-left: -1px;
+}
+/* ============================================= */
+/* == KẾT THÚC PHẦN CSS MỚI                   == */
+/* ============================================= */
+
+
+/* Các khối nội dung */
+.menu-section {
+    padding: 0 20px;
+    margin-bottom: 25px;
+}
+
+/* Tiêu đề mục Starter, Desserts */
+h2 {
+    color: #d92a1c;
+    font-size: 2.4em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    
+    background-color: #fdf5e6;
+    display: block; 
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 5px 20px; 
+}
+
+
+/* Danh sách các món ăn */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    font-size: 1.1em;
+    color: #000;
+    margin-bottom: 14px;
+    padding-left: 20px;
+    position: relative;
+}
+
+li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: #000;
+}
+
+/* Món đặc biệt màu cam */
+.special-item {
+    color: #f58421;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Các ký hiệu */
+.symbol-orange {
+    color: #e84a2c;
+    text-decoration: underline;
+}
+.symbol-light-orange {
+    color: #e69138;
+    text-decoration: underline;
+}
+
+/* Liên kết "Back to Top" */
+.back-link {
+    display: block;
+    margin-top: 25px;
+    font-size: 1.1em;
+    color: #e84a2c;
+    text-decoration: underline;
+}
