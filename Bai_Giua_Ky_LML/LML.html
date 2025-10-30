@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio của Lê Minh Liêm - Fullstack Developer">
+    <meta name="author" content="Lê Minh Liêm">
+    <title>Lê Minh Liêm - Fullstack Developer Portfolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== GLOBAL STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #8b5cf6;
+            --secondary-color: #ec4899;
+            --dark-bg: #0f172a;
+            --darker-bg: #020617;
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, #1e1b4b 50%, var(--darker-bg) 100%);
+            color: var(--text-light);
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* ==================== PARTICLES BACKGROUND ==================== */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        /* ==================== SCROLLBAR ==================== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--darker-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+        }
+        
+        /* ==================== SCROLL PROGRESS BAR ==================== */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), #3b82f6);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
+        /* ==================== NAVBAR ==================== */
+        .navbar {
+            background: transparent;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+        
+        .navbar.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        /* ==================== HERO SECTION ==================== */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .typing-text {
+            font-size: 2rem;
+            color: var(--text-muted);
+            min-height: 80px;
+        }
+        
+        .typing-text::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin: 1.5rem 0;
+        }
+        
+        .avatar-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+        }
+        
+        .avatar-glow {
+            position: absolute;
+            inset: -20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.4;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .avatar-img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(139, 92, 246, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: float-icon 3s ease-in-out infinite;
+        }
+        
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .floating-icon:nth-child(2) { top: 0; left: 0; animation-delay: 0s; }
+        .floating-icon:nth-child(3) { top: 0; right: 0; animation-delay: 0.5s; }
+        .floating-icon:nth-child(4) { bottom: 0; left: 0; animation-delay: 1s; }
+        .floating-icon:nth-child(5) { bottom: 0; right: 0; animation-delay: 1.5s; }
+        
+        /* ==================== BUTTONS ==================== */
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(139, 92, 246, 0.6);
+            color: white;
+        }
+        
+        .btn-outline-gradient {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-gradient:hover {
+            background: rgba(139, 92, 246, 0.1);
+            transform: translateY(-3px);
+            color: var(--primary-color);
+        }
+        
+        /* ==================== SECTION TITLES ==================== */
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .section-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            margin: 0 auto 3rem;
+            border-radius: 10px;
+        }
+        
+        /* ==================== CARDS ==================== */
+        .custom-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .custom-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* ==================== BADGES ==================== */
+        .custom-badge {
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin: 0.25rem;
+            display: inline-block;
+        }
+        
+        /* ==================== SKILLS ==================== */
+        .skill-item {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            border-color: rgba(139, 92, 246, 0.6);
+            transform: translateX(5px);
+        }
+        
+        .progress-bar {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+        
+        .progress {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 10px;
+            height: 10px;
+        }
+        
+        /* ==================== PROJECTS ==================== */
+        .project-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+            opacity: 0.6;
+        }
+        
+        /* ==================== GALLERY ==================== */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            height: 300px;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        /* ==================== CERTIFICATES ==================== */
+        .certificate-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+        
+        .certificate-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* ==================== CONTACT ==================== */
+        .contact-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover .contact-icon {
+            background: rgba(139, 92, 246, 0.4);
+            transform: scale(1.1);
+        }
+        
+        /* ==================== QUOTE SECTION ==================== */
+        .quote-section {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .quote-text {
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: rgba(15, 23, 42, 0.8);
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 3rem 0 1rem;
+        }
+        
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.2);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.5rem;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transform: translateY(-5px) rotate(5deg);
+        }
+        
+        /* ==================== SCROLL TO TOP BUTTON ==================== */
+        #scrollTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+        
+        #scrollTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #scrollTop:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(139, 92, 246, 0.6);
+        }
+        
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .typing-text {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .avatar-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .floating-icon {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        /* ==================== TABS ==================== */
+        .nav-tabs {
+            border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            color: var(--text-muted);
+            background: transparent;
+            padding: 1rem 1.5rem;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            border-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        .nav-tabs .nav-link.active {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+    
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-code"></i> LMLTech
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Kỹ năng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificates">Chứng chỉ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Dự án</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Album</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="mb-4">
+                        <i class="fas fa-sparkles" style="font-size: 2rem; color: #fbbf24;"></i>
+                    </div>
+                    <h1 class="hero-title">Lê Minh Liêm</h1>
+                    <div class="typing-text" id="typing"></div>
+                    <p class="hero-description">
+                        "Không ngừng học hỏi, không ngừng sáng tạo. Từ những dòng code đến giải pháp công nghệ, 
+                        tôi tin rằng mỗi dự án đều là cơ hội để làm cho thế giới tốt đẹp hơn."
+                    </p>
+                    <div class="mb-4">
+                        <span class="custom-badge">
+                            <i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh
+                        </span>
+                        <span class="custom-badge">
+                            <i class="fas fa-calendar"></i> 16/05/2005
+                        </span>
+                        <span class="custom-badge">
+                            <i class="fas fa-graduation-cap"></i> Năm 3 - ĐH GTVT
+                        </span>
+                    </div>
+                    <div>
+                        <a href="#projects" class="btn btn-gradient me-3">
+                            <i class="fas fa-rocket"></i> Xem Dự Án
+                        </a>
+                        <a href="#contact" class="btn btn-outline-gradient">
+                            <i class="fas fa-envelope"></i> Liên Hệ
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="avatar-container">
+                        <div class="avatar-glow"></div>
+                        <img src="avatarLML.jpg" 
+                             alt="Lê Minh Liêm" class="avatar-img">
+                        <div class="floating-icon">
+                            <i class="fas fa-code" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div class="floating-icon">
+                            <i class="fas fa-database" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div class="floating-icon">
+                            <i class="fas fa-server" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div class="floating-icon">
+                            <i class="fas fa-globe" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Về Tôi</h2>
+            <div class="section-divider" data-aos="fade-up"></div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="custom-card">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4 class="mb-3" style="color: var(--primary-color);">Lĩnh Vực Quan Tâm</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Web Development & Cloud</li>
+                            <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Blockchain & Web3</li>
+                            <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>AI/ML Applications</li>
+                            <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Smart Transportation</li>
+                            <li class="mb-2"><i class="fas fa-sparkles text-info me-2"></i>Giải quyết vấn đề phức tạp</li>
+                            <li class="mb-2"><i class="fas fa-sparkles text-info me-2"></i>Nghiên cứu công nghệ mới</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="custom-card">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h4 class="mb-3" style="color: #3b82f6;">Mục Tiêu Nghề Nghiệp</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-rocket text-primary me-2"></i>Senior Backend Engineer</li>
+                            <li class="mb-2"><i class="fas fa-rocket text-primary me-2"></i>Chuyên gia Web3 & Blockchain</li>
+                            <li class="mb-2"><i class="fas fa-rocket text-primary me-2"></i>Xây dựng sản phẩm có tác động xã hội</li>
+                            <li class="mb-2"><i class="fas fa-rocket text-primary me-2"></i>Đóng góp Open Source</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="custom-card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="mb-3" style="color: var(--secondary-color);">Điểm Mạnh</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Tư duy logic và phân tích tốt</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Học công nghệ mới nhanh</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Thiết kế hệ thống & kiến trúc</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Làm việc nhóm hiệu quả</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Kiên trì và trách nhiệm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                    <div class="custom-card">
+                        <div class="d-flex align-items-start">
+                            <div class="card-icon me-4">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h3 class="mb-3" style="color: var(--primary-color);">Học Vấn</h3>
+                                <div class="mb-2">
+                                    <span class="custom-badge me-2">2022 - Hiện tại</span>
+                                    <span class="custom-badge" style="background: rgba(34, 197, 94, 0.2); border-color: rgba(34, 197, 94, 0.5); color: #22c55e;">Năm 3</span>
+                                </div>
+                                <h4 class="text-white mb-2">Đại Học Giao Thông Vận Tải TP.HCM</h4>
+                                <p class="text-muted mb-1">Chuyên ngành: Công nghệ Thông tin</p>
+                                <p class="text-muted mb-1">Tập trung: Backend Development, Web Technologies, AI/ML</p>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                                    📍 Quê quán: Đồng Tháp | 📍 Hiện tại: TP. Hồ Chí Minh
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Kỹ Năng & Công Nghệ</h2>
+            <div class="section-divider" data-aos="fade-up"></div>
+            <p class="text-center text-light mb-5" data-aos="fade-up">
+                Các công nghệ và ngôn ngữ tôi đang sử dụng, cùng những kỹ năng đang học hỏi
+            </p>
+            
+            <!-- Languages -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="custom-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-language" style="font-size: 2rem; color: var(--primary-color); margin-right: 1rem;"></i>
+                            <h3 style="color: var(--primary-color); margin: 0;">Ngôn Ngữ</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span><span style="font-size: 1.5rem;">🇻🇳</span> Tiếng Việt</span>
+                                    <span style="color: var(--primary-color);">100%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span><span style="font-size: 1.5rem;">🇬🇧</span> English</span>
+                                    <span style="color: var(--primary-color);">65%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Tabs -->
+            <ul class="nav nav-tabs justify-content-center mb-4" id="skillsTabs" role="tablist" data-aos="fade-up">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#frontend">Frontend</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#backend">Backend</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#database">Database</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tools">Tools</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#learning">Đang Học</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content">
+                <!-- Frontend -->
+                <div class="tab-pane fade show active" id="frontend">
+                    <div class="row g-4">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-html5 me-2" style="color: #e34c26; font-size: 1.5rem;"></i>
+                                        <span>HTML5</span>
+                                    </div>
+                                    <span style="color: var(--primary-color);">75%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-css3-alt me-2" style="color: #264de4; font-size: 1.5rem;"></i>
+                                        <span>CSS3</span>
+                                    </div>
+                                    <span style="color: var(--primary-color);">75%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-js me-2" style="color: #f7df1e; font-size: 1.5rem;"></i>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <span style="color: var(--primary-color);">70%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-react me-2" style="color: #61dafb; font-size: 1.5rem;"></i>
+                                        <span>React + TypeScript</span>
+                                    </div>
+                                    <span style="color: var(--primary-color);">65%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-wind me-2" style="color: #06b6d4; font-size: 1.5rem;"></i>
+                                        <span>Tailwind CSS</span>
+                                    </div>
+                                    <span style="color: var(--primary-color);">80%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-bootstrap me-2" style="color: #7952b3; font-size: 1.5rem;"></i>
+                                        <span>Bootstrap</span>
+                                    </div>
+                                    <span style="color: var(--primary-color);">75%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend -->
+                <div class="tab-pane fade" id="backend">
+                    <div class="row g-4">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-node me-2" style="color: #68a063; font-size: 1.5rem;"></i>
+                                        <span>Node.js</span>
+                                    </div>
+                                    <span style="color: #3b82f6;">75%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 75%; background: linear-gradient(to right, #3b82f6, #8b5cf6);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-python me-2" style="color: #3776ab; font-size: 1.5rem;"></i>
+                                        <span>Python</span>
+                                    </div>
+                                    <span style="color: #3b82f6;">70%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%; background: linear-gradient(to right, #3b82f6, #8b5cf6);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-java me-2" style="color: #007396; font-size: 1.5rem;"></i>
+                                        <span>Java Spring Boot</span>
+                                    </div>
+                                    <span style="color: #3b82f6;">65%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 65%; background: linear-gradient(to right, #3b82f6, #8b5cf6);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-flask me-2" style="color: #000; font-size: 1.5rem;"></i>
+                                        <span>Flask</span>
+                                    </div>
+                                    <span style="color: #3b82f6;">70%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%; background: linear-gradient(to right, #3b82f6, #8b5cf6);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-server me-2" style="color: #092e20; font-size: 1.5rem;"></i>
+                                        <span>Django</span>
+                                    </div>
+                                    <span style="color: #3b82f6;">65%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 65%; background: linear-gradient(to right, #3b82f6, #8b5cf6);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-code me-2" style="color: #00599c; font-size: 1.5rem;"></i>
+                                        <span>C++</span>
+                                    </div>
+                                    <span style="color: #3b82f6;">65%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 65%; background: linear-gradient(to right, #3b82f6, #8b5cf6);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Database -->
+                <div class="tab-pane fade" id="database">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-database me-2" style="color: #4479a1; font-size: 1.5rem;"></i>
+                                        <span>MySQL</span>
+                                    </div>
+                                    <span style="color: #22c55e;">70%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%; background: linear-gradient(to right, #22c55e, #3b82f6);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-database me-2" style="color: #cc2927; font-size: 1.5rem;"></i>
+                                        <span>SQL Server</span>
+                                    </div>
+                                    <span style="color: #22c55e;">65%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 65%; background: linear-gradient(to right, #22c55e, #3b82f6);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="tab-pane fade" id="tools">
+                    <div class="row g-4">
+                        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-git-alt me-2" style="color: #f05032; font-size: 1.5rem;"></i>
+                                        <span>Git</span>
+                                    </div>
+                                    <span style="color: #f97316;">75%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 75%; background: linear-gradient(to right, #f97316, #ef4444);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-github me-2" style="color: #fff; font-size: 1.5rem;"></i>
+                                        <span>GitHub</span>
+                                    </div>
+                                    <span style="color: #f97316;">80%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 80%; background: linear-gradient(to right, #f97316, #ef4444);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-docker me-2" style="color: #2496ed; font-size: 1.5rem;"></i>
+                                        <span>Docker</span>
+                                    </div>
+                                    <span style="color: #f97316;">60%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 60%; background: linear-gradient(to right, #f97316, #ef4444);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fab fa-figma me-2" style="color: #f24e1e; font-size: 1.5rem;"></i>
+                                        <span>Figma UI/UX</span>
+                                    </div>
+                                    <span style="color: #f97316;">65%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 65%; background: linear-gradient(to right, #f97316, #ef4444);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Learning -->
+                <div class="tab-pane fade" id="learning">
+                    <div class="row g-4">
+                        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-item text-center">
+                                <i class="fas fa-lock" style="font-size: 2rem; color: #fbbf24; margin-bottom: 0.5rem;"></i>
+                                <h6 class="mb-2">Blockchain</h6>
+                                <span class="custom-badge" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.5); color: #fbbf24; font-size: 0.75rem;">
+                                    Đang nghiên cứu
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-item text-center">
+                                <i class="fas fa-code" style="font-size: 2rem; color: #fbbf24; margin-bottom: 0.5rem;"></i>
+                                <h6 class="mb-2">Solidity</h6>
+                                <span class="custom-badge" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.5); color: #fbbf24; font-size: 0.75rem;">
+                                    Đang nghiên cứu
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-item text-center">
+                                <i class="fas fa-code-branch" style="font-size: 2rem; color: #fbbf24; margin-bottom: 0.5rem;"></i>
+                                <h6 class="mb-2">Move</h6>
+                                <span class="custom-badge" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.5); color: #fbbf24; font-size: 0.75rem;">
+                                    Đang nghiên cứu
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-item text-center">
+                                <i class="fas fa-cog" style="font-size: 2rem; color: #fbbf24; margin-bottom: 0.5rem;"></i>
+                                <h6 class="mb-2">Rust</h6>
+                                <span class="custom-badge" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.5); color: #fbbf24; font-size: 0.75rem;">
+                                    Đang nghiên cứu
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="skill-item text-center">
+                                <i class="fas fa-globe" style="font-size: 2rem; color: #fbbf24; margin-bottom: 0.5rem;"></i>
+                                <h6 class="mb-2">Web3</h6>
+                                <span class="custom-badge" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.5); color: #fbbf24; font-size: 0.75rem;">
+                                    Đang nghiên cứu
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="350">
+                            <div class="skill-item text-center">
+                                <i class="fas fa-file-contract" style="font-size: 2rem; color: #fbbf24; margin-bottom: 0.5rem;"></i>
+                                <h6 class="mb-2">Smart Contracts</h6>
+                                <span class="custom-badge" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.5); color: #fbbf24; font-size: 0.75rem;">
+                                    Đang nghiên cứu
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="skill-item text-center">
+                                <i class="fas fa-chart-line" style="font-size: 2rem; color: #fbbf24; margin-bottom: 0.5rem;"></i>
+                                <h6 class="mb-2">DeFi</h6>
+                                <span class="custom-badge" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.5); color: #fbbf24; font-size: 0.75rem;">
+                                    Đang nghiên cứu
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="450">
+                            <div class="skill-item text-center">
+                                <i class="fab fa-ethereum" style="font-size: 2rem; color: #fbbf24; margin-bottom: 0.5rem;"></i>
+                                <h6 class="mb-2">Ethereum</h6>
+                                <span class="custom-badge" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.5); color: #fbbf24; font-size: 0.75rem;">
+                                    Đang nghiên cứu
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center text-muted mt-4 fst-italic">
+                        🚀 Đang không ngừng học hỏi và mở rộng kiến thức về Web3, Blockchain và AI
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== CERTIFICATES SECTION ==================== -->
+    <section id="certificates" class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Chứng Chỉ & Giải Thưởng</h2>
+            <div class="section-divider" data-aos="fade-up"></div>
+            <p class="text-center text-muted mb-5" data-aos="fade-up">
+                Hành trình học tập và những thành tích đã đạt được
+            </p>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="custom-card text-center" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">
+                        <i class="fas fa-trophy" style="font-size: 3rem; color: #fbbf24; margin-bottom: 1.5rem;"></i>
+                        <h4 class="text-white mb-3">Chưa có chứng chỉ chính thức</h4>
+                        <p class="text-light fst-italic mb-0" style="font-size: 1.1rem;">
+                            💪 Hiện tại đang tập trung học tập và cố gắng đạt được các chứng chỉ chuyên môn.<br>
+                            Phát triển kỹ năng thông qua các dự án thực tế và không ngừng học hỏi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Dự Án Nổi Bật</h2>
+            <div class="section-divider" data-aos="fade-up"></div>
+            <p class="text-center text-muted mb-5" data-aos="fade-up">
+                Các dự án tôi đã thực hiện và đang phát triển
+            </p>
+            
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/user-attachments/assets/b7d13b4d-a473-2e85-b333-f39943616afd" 
+                                 alt="WebRTC Chat" class="project-img"
+                                 onerror="this.src='webrtc.png'">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-3" style="color: var(--primary-color);">WebRTC Video Chat Room</h4>
+                            <p class="text-light mb-3">
+                                Ứng dụng họp online P2P với WebRTC, hỗ trợ tạo phòng, chat realtime, video call và chia sẻ màn hình trực tiếp.
+                            </p>
+                            <div class="mb-3">
+                                <small class="text-light d-block mb-2">Tính năng chính:</small>
+                                <ul class="list-unstyled" style="font-size: 0.9rem;">
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Tạo phòng với mật khẩu</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Video call P2P</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Screen sharing</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Chat realtime</li>
+                                </ul>
+                            </div>
+                            <div class="mb-3">
+                                <span class="custom-badge me-1">Node.js</span>
+                                <span class="custom-badge me-1">WebRTC</span>
+                                <span class="custom-badge me-1">Socket.io</span>
+                                <span class="custom-badge me-1">JavaScript</span>
+                            </div>
+                            <a href="https://webrtc-chatroom.onrender.com" target="_blank" class="btn btn-gradient btn-sm me-2">
+                                <i class="fas fa-external-link-alt me-1"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="position-relative overflow-hidden">
+                            <img src="DashboardAccident.png" 
+                                 alt="AI Traffic" class="project-img">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-3" style="color: var(--primary-color);">accident-report-system and Yolov8-accident-detection</h4>
+                            <p class="text-light mb-3">
+                                Hệ thống camera AI nhận diện tai nạn giao thông sử dụng OpenCV và YOLOv8, tích hợp dashboard thống kê và quản lý.
+                            </p>
+                            <div class="mb-3">
+                                <small class="text-light d-block mb-2">Tính năng chính:</small>
+                                <ul class="list-unstyled" style="font-size: 0.9rem;">
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Nhận diện tai nạn realtime</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Dashboard thống kê</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Lưu trữ sự kiện</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Phân tích khu vực</li>
+                                </ul>
+                            </div>
+                            <div class="mb-3">
+                                <span class="custom-badge me-1">Python</span>
+                                <span class="custom-badge me-1">Flask</span>
+                                <span class="custom-badge me-1">OpenCV</span>
+                                <span class="custom-badge me-1">YOLOv8</span>
+                                <span class="custom-badge me-1">AI/ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop" 
+                                 alt="Event Management" class="project-img">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-3" style="color: var(--primary-color);">Event Management System</h4>
+                            <p class="text-light mb-3">
+                                Hệ thống quản lý sự kiện với đặt vé online, thanh toán, quét mã QR check-in và thống kê khách tham gia.
+                            </p>
+                            <div class="mb-3">
+                                <small class="text-light d-block mb-2">Tính năng chính:</small>
+                                <ul class="list-unstyled" style="font-size: 0.9rem;">
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Đặt vé online</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>QR code check-in</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Thanh toán tích hợp</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Thống kê khách</li>
+                                </ul>
+                            </div>
+                            <div class="mb-3">
+                                <span class="custom-badge me-1">HTML5</span>
+                                <span class="custom-badge me-1">CSS</span>
+                                <span class="custom-badge me-1">JavaScript</span>
+                                <span class="custom-badge me-1">Bootstrap</span>
+                                <span class="custom-badge me-1">Python</span>
+                                <span class="custom-badge me-1">Django</span>
+                                <span class="custom-badge me-1">MySQL</span>
+                                <span class="custom-badge me-1">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="position-relative overflow-hidden">
+                            <img src="Carboncreditavt.png" 
+                                 alt="Carbon Credit" class="project-img">
+                            <div class="project-overlay"></div>
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3">Đang phát triển</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-3" style="color: var(--primary-color);">Carbon-Credit-Marketplace</h4>
+                            <p class="text-muted mb-3">
+                                Nền tảng giao dịch tín chỉ carbon, theo dõi và quản lý phát thải CO2 của doanh nghiệp.
+                            </p>
+                            <div class="mb-3">
+                                <small class="text-light d-block mb-2">Tính năng chính:</small>
+                                <ul class="list-unstyled" style="font-size: 0.9rem;">
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Theo dõi phát thải</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Giao dịch tín chỉ</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Dashboard analytics</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Quản lý dữ liệu</li>
+                                </ul>
+                            </div>
+                            <div class="mb-3">
+                                <span class="custom-badge me-1">React + TypeScript</span>
+                                <span class="custom-badge me-1">MySQL</span>
+                                <span class="custom-badge me-1">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 - Crowdfunding -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="position-relative overflow-hidden">
+                            <img src="Trefund.png" 
+                                 alt="Crowdfunding Platform" class="project-img">
+                            <div class="project-overlay"></div>
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3">Đang phát triển</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-3" style="color: var(--primary-color);">Website gây quỹ cho startup</h4>
+                            <p class="text-muted mb-3">
+                                Nền tảng gọi vốn cộng đồng phi tập trung, cho phép founder đăng dự án và nhà đầu tư đóng góp vốn trực tiếp thông qua blockchain.
+                            </p>
+                            <div class="mb-3">
+                                <small class="text-light d-block mb-2">Tính năng chính:</small>
+                                <ul class="list-unstyled" style="font-size: 0.9rem;">
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Đăng dự án gọi vốn</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Tích hợp ví MetaMask, WalletConnect</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Smart contract trên Cedra chain (EVM compatible)</li>
+                                    <li class="text-light"><i class="fas fa-check text-success me-2"></i>Triển khai Docker + cloud hosting</li>
+                                </ul>
+                            </div>
+                            <div class="mb-3">
+                                <span class="custom-badge me-1">React + TypeScript</span>
+                                <span class="custom-badge me-1">MySQL</span>
+                                <span class="custom-badge me-1">Java Spring Boot</span>
+                                <span class="custom-badge me-1">PHP</span>
+                                <span class="custom-badge me-1">Smart Contracts</span>
+                                <span class="custom-badge me-1">SQL Server</span>
+                                <span class="custom-badge me-1">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GitHub Stats -->
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                    <div class="custom-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="mb-0" style="color: var(--primary-color);">
+                                <i class="fab fa-github me-2"></i> GitHub Activity
+                            </h3>
+                            <a href="https://github.com/LMLTech" target="_blank" class="btn btn-outline-gradient btn-sm">
+                                <i class="fas fa-external-link-alt me-1"></i> View Profile
+                            </a>
+                        </div>
+                        <div class="row g-4 text-center">
+                            <div class="col-md-4">
+                                <div class="p-3 rounded" style="background: rgba(240, 240, 242, 0.1);">
+                                    <i class="fas fa-code-branch" style="font-size: 2rem; color: var(--primary-color);"></i>
+                                    <h3 class="mt-2 mb-1">7+</h3>
+                                    <p class="text-light mb-0">Repositories</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 rounded" style="background: rgba(59, 130, 246, 0.1);">
+                                    <i class="fas fa-code" style="font-size: 2rem; color: #3b82f6;"></i>
+                                    <h3 class="mt-2 mb-1">58+</h3>
+                                    <p class="text-light mb-0">Commits (2025)</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 rounded" style="background: rgba(236, 72, 153, 0.1);">
+                                    <i class="fas fa-star" style="font-size: 2rem; color: var(--secondary-color);"></i>
+                                    <h3 class="mt-2 mb-1">Learning</h3>
+                                    <p class="text-light mb-0">Always Growing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== GALLERY SECTION ==================== -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Album Ảnh</h2>
+            <div class="section-divider" data-aos="fade-up"></div>
+            <p class="text-center text-light mb-5" data-aos="fade-up">
+                Những khoảnh khắc trong hành trình học tập và phát triển
+            </p>
+            
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="avatarLML.jpg" 
+                             alt="Ảnh đại diện" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-camera mb-2"></i>
+                            <h5>Ảnh đại diện</h5>
+                            <p class="mb-0">Lê Minh Liêm - Fullstack Developer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="uth.jpg" 
+                             alt="Học tập" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-camera mb-2"></i>
+                            <h5>Trong môi trường học tập</h5>
+                            <p class="mb-0">Tại Đại học Giao thông Vận tải TP.HCM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <img src="workspace.jpg" 
+                             alt="Workspace" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-camera mb-2"></i>
+                            <h5>Workspace của tôi</h5>
+                            <p class="mb-0">Nơi tôi code và sáng tạo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="gallery-item">
+                        <img src="hinhanhcode.png" 
+                             alt="Coding" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-camera mb-2"></i>
+                            <h5>Đam mê lập trình</h5>
+                            <p class="mb-0">Coding is my passion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== QUOTE SECTION ==================== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                    <div class="quote-section">
+                        <i class="fas fa-quote-left mb-4" style="font-size: 3rem; color: #fbbf24;"></i>
+                        <blockquote class="quote-text mb-3">
+                            "Thành tựu không thể nào có được nếu thiếu sự kiên cường, sự kiên nhẫn, ngoài sở thích và đam mê"
+                        </blockquote>
+                        <p class="text-light mb-4">- - -</p>
+                        <div style="font-size: 1.2rem;">
+                            💡 Phương châm: <span class="text-white">"Hãy tin vào chính mình - believe in yourself "</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Liên hệ</h2>
+            <div class="section-divider" data-aos="fade-up"></div>
+            <p class="text-center text-light mb-5" data-aos="fade-up">
+                Hãy kết nối với tôi qua các kênh sau tôi luôn sẵn sàng lắng nghe bạn
+            </p>
+            
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h5 class="mb-2" style="color: var(--primary-color);">Email</h5>
+                        <a href="mailto:liemliem910@gmail.com" class="text-light text-decoration-none" style="font-size: 0.9rem;">
+                            liemliem910@gmail.com
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card" onclick="window.open('https://github.com/LMLTech', '_blank')">
+                        <div class="contact-icon">
+                            <i class="fab fa-github" style="color: #3b82f6;"></i>
+                        </div>
+                        <h5 class="mb-2" style="color: #3b82f6;">GitHub</h5>
+                        <p class="text-light mb-0">@LMLTech</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-card" onclick="window.open('https://www.facebook.com/share/17G543b4S9/?mibextid=wwXIfr', '_blank')">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook" style="color: var(--secondary-color);"></i>
+                        </div>
+                        <h5 class="mb-2" style="color: var(--secondary-color);">Facebook</h5>
+                        <p class="text-light mb-0">Lê Minh Liêm</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-card" onclick="window.open('https://instagram.com/_mhlm165', '_blank')">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram" style="color: #f97316;"></i>
+                        </div>
+                        <h5 class="mb-2" style="color: #f97316;">Instagram</h5>
+                        <p class="text-light mb-0">@_mhlm165</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="custom-card">
+                        <div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-phone" style="font-size: 1.5rem; color: #22c55e; margin-right: 1rem;"></i>
+                                    <div>
+                                        <h5 class="mb-1">Số điện thoại</h5>
+                                        <a href="tel:0366230747" class="text-light text-decoration-none">0366 230 747</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: #ef4444; margin-right: 1rem;"></i>
+                                    <div>
+                                        <h5 class="mb-1">Địa chỉ</h5>
+                                        <p class="text-light mb-0">TP. Hồ Chí Minh (Quê: Đồng Tháp)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
+                        <i class="fas fa-code" style="font-size: 1.5rem; color: var(--primary-color); margin-right: 0.5rem;"></i>
+                        <span style="font-size: 1.3rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            LMLTech
+                        </span>
+                    </div>
+                    <p class="text-light mb-1" style="font-size: 0.9rem;">
+                        © 2025 Lê Minh Liêm. Built with HTML5, CSS3, Bootstrap & JavaScript
+                    </p>
+                    <p class="text-light" style="font-size: 0.8rem;">
+                        Bài thi giữa kỳ môn Lập Trình Web - ĐH GTVT TP.HCM
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-links text-center text-md-end">
+                        <a href="https://github.com/LMLTech" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/17G543b4S9/?mibextid=wwXIfr" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://instagram.com/_mhlm165" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:liemliem910@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // ==================== INITIALIZE AOS ====================
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // ==================== PARTICLES BACKGROUND ====================
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#8b5cf6'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.3,
+                    random: true
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#8b5cf6',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+        
+        // ==================== TYPING EFFECT ====================
+        const texts = [
+            'Fullstack Developer',
+            'Backend Engineer',
+            'Web3 Enthusiast',
+            'AI Explorer'
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing');
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 2000;
+        
+        function typeText() {
+            const currentText = texts[textIndex];
+            
+            if (!isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex);
+                charIndex++;
+                
+                if (charIndex > currentText.length) {
+                    isDeleting = true;
+                    setTimeout(typeText, pauseTime);
+                    return;
+                }
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex);
+                charIndex--;
+                
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                }
+            }
+            
+            setTimeout(typeText, isDeleting ? deletingSpeed : typingSpeed);
+        }
+        
+        typeText();
+        
+        // ==================== NAVBAR SCROLL EFFECT ====================
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Update active nav link
+            const sections = document.querySelectorAll('section');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // ==================== SCROLL PROGRESS BAR ====================
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+        
+        // ==================== SMOOTH SCROLL ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+        
+        // ==================== SCROLL TO TOP BUTTON ====================
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // ==================== ANIMATE PROGRESS BARS ON SCROLL ====================
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-bar');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('#skills .tab-pane').forEach(pane => {
+            observer.observe(pane);
+        });
+        
+        // Trigger animation when tab is clicked
+        document.querySelectorAll('#skillsTabs button').forEach(button => {
+            button.addEventListener('shown.bs.tab', (e) => {
+                const targetPane = document.querySelector(e.target.getAttribute('data-bs-target'));
+                const progressBars = targetPane.querySelectorAll('.progress-bar');
+                progressBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            });
+        });
+        
+        // ==================== CONSOLE MESSAGE ====================
+        console.log('%c👋 Xin chào!', 'font-size: 20px; color: #8b5cf6; font-weight: bold;');
+        console.log('%cPortfolio của Lê Minh Liêm - Fullstack Developer', 'font-size: 14px; color: #ec4899;');
+        console.log('%cĐang tìm kiếm cơ hội học hỏi và phát triển!', 'font-size: 12px; color: #3b82f6;');
+        console.log('%c📧 Email: liemliem190@gmail.com', 'font-size: 12px; color: #22c55e;');
+    </script>
+</body>
+</html>
