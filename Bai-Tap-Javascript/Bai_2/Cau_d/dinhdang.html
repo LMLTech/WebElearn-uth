@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form định dạng</title>
+  <link rel="stylesheet" href="css/dinhdang.css">
+</head>
+<body>
+  <div class="card">
+    <h3>FORM ĐỊNH DẠNG</h3>
+
+    <label for="hoten">Họ và tên:</label>
+    <input type="text" id="hoten" placeholder="Nhập họ tên...">
+    <br><br>
+
+    <label>Chọn:</label>
+    <input type="radio" name="chon" value="bg" id="bg"> <label for="bg">Background</label>
+    <input type="radio" name="chon" value="font" id="font"> <label for="font">Font</label>
+    <br><br>
+
+    <label>Chọn màu:</label>
+    <select id="chonmau">
+      <option value="">Chọn màu ...</option>
+      <option value="red">Đỏ</option>
+      <option value="blue">Xanh dương</option>
+      <option value="green">Xanh lá</option>
+      <option value="yellow">Vàng</option>
+      <option value="pink">Hồng</option>
+      <option value="gray">Xám</option>
+    </select>
+    <br><br>
+
+    <button id="btnDoi">Đổi màu</button>
+    <button id="btnCancel">Cancel</button>
+
+    <p id="doanvan">
+      you can direct link the hyperlink with the file if you know the address but this is limited by the browser.
+      eg. if pdf reader is installed on the client then the pdf will not be downloaded instead it will be shown.
+      A good solution would be to have a seperate page for downloading files...
+    </p>
+  </div>
+
+  <script src="js/dinhdang.js"></script>
+</body>
+</html>

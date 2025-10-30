@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  padding: 20px;
+}
+
+.card {
+  width: 420px;
+  border: 2px solid #666;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+}
+
+.card header {
+  background: #f2d6d6;
+  color: #d94f63;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+td {
+  padding: 8px;
+  border-top: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.field-name {
+  width: 130px;
+  font-weight: bold;
+  padding-left: 8px;
+}
+
+.field-value {
+  padding-right: 8px;
+  color: #333;
+}
+
+.note {
+  font-size: 14px;
+  color: #666;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}

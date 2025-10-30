@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phép tính cơ bản</title>
+  <link rel="stylesheet" href="css/pheptinh.css">
+</head>
+<body>
+  <div class="card">
+    <h2>PHÉP TÍNH CƠ BẢN</h2>
+
+    <label>Nhập số thứ 1:</label>
+    <input type="text" id="so1" placeholder="Nhập số thứ nhất">
+    <span class="error" id="err1"></span><br>
+
+    <label>Nhập số thứ 2:</label>
+    <input type="text" id="so2" placeholder="Nhập số thứ hai">
+    <span class="error" id="err2"></span><br>
+
+    <div class="btn-group">
+      <button onclick="tinh('+')">Cộng</button>
+      <button onclick="tinh('-')">Trừ</button>
+      <button onclick="tinh('*')">Nhân</button>
+      <button onclick="tinh('/')">Chia</button>
+      <button onclick="tinh('%')">Chia dư</button>
+    </div>
+
+    <p>Kết quả: <span id="ketqua">--</span></p>
+  </div>
+
+  <script src="js/pheptinh.js"></script>
+</body>
+</html>

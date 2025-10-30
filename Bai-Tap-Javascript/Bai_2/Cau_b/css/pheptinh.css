@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  text-align: center;
+  width: 300px;
+}
+
+h2 {
+  color: #d9534f;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 90%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.btn-group button {
+  margin: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+#ketqua {
+  font-weight: bold;
+  color: blue;
+}
