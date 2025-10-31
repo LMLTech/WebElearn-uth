@@ -1,33 +1,58 @@
+/* Thiết kế giao diện tổng thể */
 body {
-  font-family: Arial, sans-serif;
-  background: #f3f3f3;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
+/* Hộp chứa nội dung chính */
 .container {
   text-align: center;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
 }
 
-img {
-  max-width: 300px;
+.container:hover {
+  transform: translateY(-3px);
+}
+
+/* Hình ảnh */
+#randomImage {
+  max-width: 320px;
   height: auto;
   border-radius: 10px;
+  transition: opacity 0.5s ease-in-out;
 }
 
+/* Nút bấm */
 .buttons {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 button {
-  padding: 8px 16px;
-  margin: 0 5px;
+  padding: 10px 20px;
+  margin: 0 8px;
   font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }

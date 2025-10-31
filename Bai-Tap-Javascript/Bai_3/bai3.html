@@ -2,17 +2,18 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Random Image Switcher</title>
+  <title>Trình đổi ảnh ngẫu nhiên</title>
   <link rel="stylesheet" href="css/bai3.css">
 </head>
 <body>
-  <div class="container">
-    <img id="randomImage" src="images/b1.jpg" alt="Random" />
+  <main class="container">
+    <img id="randomImage" src="images/b1.jpg" alt="Ảnh ngẫu nhiên">
     <div class="buttons">
-      <button onclick="startChanging()">Play</button>
-      <button onclick="stopChanging()">Stop</button>
+      <button id="playBtn">▶️ Play</button>
+      <button id="stopBtn" disabled>⏹ Stop</button>
     </div>
-  </div>
+  </main>
+
   <script src="js/bai3.js"></script>
 </body>
 </html>
